@@ -1,17 +1,29 @@
-import { ChakraProvider, Flex } from "@chakra-ui/react";
-import { Card } from "./components/Card";
-import { Header } from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
+// 016-react\my-app-ts\src\App.tsx
+import { BrowserRouter } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
+import { Layout } from './components/Layout';
+import { AppContextProvider } from './components/appContext';
+import { MainRoutes } from './routes';
+import { generateAndStoreToken, getStoredToken } from './services/storageLocal';
 
 function App() {
+	const token = getStoredToken();
+	const isLogged = token?.isLogged;
+
+	if (!isLogged) {
+		generateAndStoreToken();
+	}
+
 	return (
-		<ChakraProvider>
-			<Flex flexDirection="column" minHeight="100vh">
-				<Header />
-				<Card />
-				<Footer />
-			</Flex>
-		</ChakraProvider>
+		<BrowserRouter>
+			<AppContextProvider>
+				<ChakraProvider>
+					<Layout>
+						<MainRoutes />
+					</Layout>
+				</ChakraProvider>
+			</AppContextProvider>
+		</BrowserRouter>
 	);
 }
 

@@ -17,36 +17,7 @@
 
 <br>
 
-##  Repository Structure
-
-```sh
-└── dio-project-my-app-react.git/
-    ├── README.md
-    ├── package-lock.json
-    ├── package.json
-    ├── public
-    │   ├── favicon.ico
-    │   ├── index.html
-    │   ├── logo192.png
-    │   ├── logo512.png
-    │   ├── manifest.json
-    │   └── robots.txt
-    ├── src
-    │   ├── App.tsx
-    │   ├── components
-    │   ├── index.tsx
-    │   ├── logo.svg
-    │   ├── react-app-env.d.ts
-    │   ├── reportWebVitals.ts
-    │   ├── services
-    │   └── setupTests.ts
-    └── tsconfig.json
-```
 ##  Getting Started
-
-###  Prerequisites
-
-**TypeScript**: `version x.y.z`
 
 ###  Installation
 

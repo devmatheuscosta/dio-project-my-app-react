@@ -1,12 +1,15 @@
-import { Footer } from "./Footer/Footer";
-import { Header } from "./Header/Header";
+import { Flex } from '@chakra-ui/react';
+import { Footer } from './footer';
+import { Header } from './header';
 
-export const Layout = ({ children }: any) => {
+export const Layout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<>
-			<Header />
-			{children}
-			<Footer />
+			<Flex flexDirection="column" minHeight="100vh">
+				<Header />
+				{children}
+				<Footer />
+			</Flex>
 		</>
 	);
 };
